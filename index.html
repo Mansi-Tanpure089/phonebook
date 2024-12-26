@@ -7,5 +7,32 @@
 </head>
 <body>
     <h1> contact book</h1>
+    <input type="text" id ="search" placeholder="search..."/>
+    <button type="button" onclick="search()">Search</button>
+    <p id ="result"></p>
+
+    <script>
+        const contacts = {
+            mansi:"9850225761",
+            pooja:"8459775421",
+            sakshi:"9254612287",
+            pragati:"9850221166",
+             }
+
+             function search(){
+                const searchInput = document.getElementById("search")
+                const query = searchInput.value.toLowerCase();
+                     
+                const mobile = contacts[query]
+            
+                const result = document.getElementById("result");
+                if(mobile){
+                    result.innerText = `Mobile number of ${query} is ${mobile}`;
+                }
+                else{
+                    result.innerText= `contact not found`;
+                }
+            }
+    </script>
 </body>
 </html>
